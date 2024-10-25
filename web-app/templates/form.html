@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Information Form</title>
+</head>
+<body>
+    <h2>Student Information Form</h2>
+    
+    <form action="/add" method="post">
+        <label for="student_id">Student ID:</label><br>
+        <input type="text" id="student_id" name="student_id" required><br><br>
+
+        <label for="first_name">First Name:</label><br>
+        <input type="text" id="first_name" name="first_name" required><br><br>
+
+        <label for="last_name">Last Name:</label><br>
+        <input type="text" id="last_name" name="last_name" required><br><br>
+
+        <label for="module_code">Module Code:</label><br>
+        <input type="text" id="module_code" name="module_code" required><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

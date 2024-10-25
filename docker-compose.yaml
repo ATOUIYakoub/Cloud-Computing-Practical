@@ -1,0 +1,43 @@
+services:
+  database:
+    image: postgres
+    env_file:
+      - .env
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    networks:
+      - backend
+    
+  adminer:
+    image: adminer
+    depends_on:
+      - database
+    ports:
+      - 8091:8080
+    networks:
+      - backend
+    
+  web-app:
+    build: ./web-app
+    ports:
+      - 8090:5000
+    depends_on:
+      - database
+      - api
+    networks:
+      - frontend
+
+  api:
+    build: ./api
+    ports:
+      - 8092:8080
+    networks:
+      - backend
+      - frontend
+
+volumes:
+  db-data:
+
+networks:
+  backend:
+  frontend:
